@@ -1,0 +1,6 @@
+for(i=0; i < emails.length ;i++){
+			emails[i].style.display = 'none';
+	}
+
+document.getElementById('<%= @email.id %>').style.display = 'block';
+document.getElementById('link<%= @email.id %>').classList.remove("unread");

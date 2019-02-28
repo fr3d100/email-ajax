@@ -1,0 +1,6 @@
+<%= link_to email_path(email.id), :method=> :put, remote:true do %>
+<li id="link<%=email.id %>" 
+	<% unless email.read %> class="unread" <% end %>>
+	<%=email.object %>
+</li>
+<%end%>

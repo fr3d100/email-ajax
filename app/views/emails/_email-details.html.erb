@@ -1,0 +1,7 @@
+<div class="email-detail" id="<%=email.id%>">
+	<h1><%=email.object%></h1>
+	<p><%=email.body%></p>
+	<br>
+	<%=link_to "Delete", email_path(email.id), :method=> :delete, remote:true, class: "delete" %>
+</div>
+

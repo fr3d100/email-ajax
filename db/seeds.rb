@@ -7,7 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Task.destroy_all
+Email.destroy_all
 
 10.times do
 	Task.create(title: Faker::Book.title, status: false)
+end
+
+20.times do 
+	Email.create(object:Faker::Commerce.product_name , body:Faker::Quote.famous_last_words, read:false)
 end

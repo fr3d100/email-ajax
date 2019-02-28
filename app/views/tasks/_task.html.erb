@@ -4,5 +4,5 @@
 	<li id="<%=task.id%>">
 <%end%>
 
-	<%=link_to task.title, task_path(task.id), :method=> :put, remote:true %>
+	<i class="fas fa-trash delete"></i> <%=link_to task.title, task_path(task.id), :method=> :put, remote:true %>
 </li>

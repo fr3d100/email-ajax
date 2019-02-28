@@ -1,0 +1,91 @@
+
+<style>
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+	.container{
+		display: flex;
+		flex-direction: row;
+		border: 2px solid;
+	}
+
+	.show-mail{
+		padding: 20px;
+	}
+	
+
+	#emails{
+		background: #dcdde1;
+		width: 300px;
+	}
+
+
+
+	ul{
+		padding:0;
+		margin:0;
+	}
+
+	#emails ul li{
+		height : 40px;
+		line-height: 40px;
+		border: 1px solid;
+		list-style: none;
+		padding-left: 10px;
+		cursor: pointer;
+	}
+
+	a{
+		text-decoration: none;
+		color : #192a56;
+	}
+	
+	.unread{
+		background-color: #fbc531;
+	}
+	
+	.delete{
+		border: solid 1px #e84118;
+		border-radius: 2px;
+		padding : 10px;
+		background:#e84118;
+		color:#fff;
+		font-weight: 600;
+		margin-top:50px;
+	}
+
+</style>
+
+
+
+<h1>My emails (<%= @numUnread %>)</h1>
+<div class="container">
+
+	<div id="emails">
+		<ul>
+			<% @emails.each do |email| %>
+				<%= render 'email', email: email %>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="show-mail">
+		<% @emails.each do |email| %>
+			<%= render 'email-details', email: email %>
+		<% end %>		
+	</div>
+
+</div>
+
+
+<script>
+	//No emails are displayed on loadong
+	let emails = document.getElementsByClassName('email-detail');
+	for(i=0; i < emails.length ;i++){
+			emails[i].style.display = 'none';
+	}
+
+
+</script>
+

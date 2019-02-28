@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root 'tasks#index'
+  
+  root 'emails#index'
   resources :tasks
+  resources :emails
 end
